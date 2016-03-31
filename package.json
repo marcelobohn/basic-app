@@ -1,0 +1,42 @@
+{
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-ruby-sass": "^2.0.6",
+    "tiny-lr": "^0.2.1"
+  },
+  "name": "basic-app",
+  "version": "1.0.0",
+  "description": "basic app HTML/CSS/JS",
+  "main": "index.html",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-ruby-sass": "^2.0.6",
+    "tiny-lr": "^0.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp",
+    "bower",
+    "html",
+    "css",
+    "js"
+  ],
+  "author": "marcelo bohn",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcelobohn/basic-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/marcelobohn/basic-app/issues"
+  },
+  "homepage": "https://github.com/marcelobohn/basic-app#readme"
+}
