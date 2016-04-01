@@ -3,6 +3,8 @@ var webserver = require('gulp-webserver');
 var connect = require('gulp-connect');
 var sass = require('gulp-sass');
 var clean = require('gulp-clean');
+var minify = require('gulp-minify');
+var minifyHtml = require("gulp-minify-html");
  
 gulp.task('webserver1', function() {
   gulp.src('app')
@@ -37,16 +39,35 @@ gulp.task('sass', function () {
     .pipe(gulp.dest('dist/css/'));
 });
 
+gulp.task('compress-js', function() {
+  gulp.src('app/js/*.js')
+    .pipe(minify({
+        ext:{
+            src:'-debug.js',
+            min:'.js'
+        },
+        exclude: ['tasks'],
+        ignoreFiles: ['.combo.js', '-min.js']
+    }))
+    .pipe(gulp.dest('dist/js/'))
+});
+
 //copy html
-gulp.task('html', function () {
+gulp.task('copy-html', function () {
   gulp.src(['app/*.html'])
+    .pipe(gulp.dest('dist/'));
+});
+
+gulp.task('minify-html', function () {
+    gulp.src('app/*.html') // path to your files
+    .pipe(minifyHtml())
     .pipe(gulp.dest('dist/'));
 });
 
 // Default task
 // gulp.task('default', ['webserver3']);
 gulp.task('default', function () {
-  gulp.start('clean');
-  gulp.start('html');
+  gulp.start('minify-html');
   gulp.start('sass');
+  gulp.start('compress-js');
 });
