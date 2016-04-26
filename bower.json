@@ -1,0 +1,6 @@
+{
+  "name": "basic-app",
+  "dependencies": {
+    "jquery": "^2.2.2"
+  }
+}
